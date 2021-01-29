@@ -1,6 +1,16 @@
+/* terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.0"
+    }
+  }
+}
+*/
+
 provider "aws" {
-  version = "~> 3.0"
   region  = var.region
+  version = "~> 3.0"
 }
 
 resource "aws_vpc" "hashicat" {
@@ -125,6 +135,8 @@ resource "aws_instance" "hashicat" {
 
   tags = {
     Name = "${var.prefix}-hashicat-instance"
+    Department = "Admin"
+    Billable = "true"
   }
 }
 
