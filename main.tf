@@ -6,10 +6,6 @@ terraform {
     }
   }
 }
-provider "aws" {
-  region  = var.region
-  version = "~> 3.0"
-}
 
 resource "aws_vpc" "hashicat" {
   cidr_block           = var.address_space
